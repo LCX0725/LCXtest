@@ -1,0 +1,19 @@
+server:
+  port: 9000
+spring:
+  security:
+    user:
+      name: xing
+      password: 123
+  application:
+    name: springEurekaServer
+eureka:
+  instance:
+    #eureka服务器的实例名称
+    appname: springEurekaServer
+    hostname: localhost
+  client:
+    fetch-registry: false  #表示自己为注册中心
+    register-with-eureka: false #是否向eureka注册中心注册自己
+    service-url:  #监控页面
+      defaultZone: http://xing:123@${eureka.instance.hostname}:9000/eureka
